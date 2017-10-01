@@ -76,6 +76,10 @@ filetype plugin on
 :set updatetime=800
 " :au! CursorHold *.[ch] nested exe "silent! botright ptag " . expand("<cword>")
 
+" Plugins
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
 " Toggle Taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
 
@@ -95,7 +99,6 @@ nnoremap <silent> <F7> :NERDTree<CR>
   " for css or scss
   autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
-execute pathogen#infect()
 
 
 " Map `\s` to replace the current word
