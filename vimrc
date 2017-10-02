@@ -104,14 +104,18 @@ nnoremap <silent> <F7> :NERDTree<CR>
 "let g:htmlbeautify = {'indent_size': 4, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']}
 "let g:cssbeautify = {'indent_size': 4, 'indent_char': ' '}
 
+if !exists("autocommands_loaded")
+    let autocommands_loaded = 1
+    
 
- " map <c-f> :call JsBeautify()<cr>
-  " or
-  autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-  " for html
-  autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-  " for css or scss
-  autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+    " map <c-f> :call JsBeautify()<cr>
+    " or
+    autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+    " for html
+    autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+    " for css or scss
+    autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+endif
 
 
 
