@@ -47,6 +47,8 @@ set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes) in terminals
+set nobackup            " No backup file after editing
+set nu                  " Show line numbers
 
 " Source a global configuration file if available
 " XXX Deprecated, please move your changes here in /etc/vim/vimrc
@@ -56,19 +58,11 @@ endif
 
 " Tab settings
 set tabstop=8
-set expandtab
+set expandtab       " Expand tab with `softtabstop`
 set softtabstop=4
 set shiftwidth=4
-set smarttab
+set smarttab        " Opt for `shiftwidth` for indention
 set smartindent
-
-
-set nobackup
-set nu
-
-"omnicppcomplete
-set nocp
-filetype plugin on
 
 " Automatically show preview window for C symbols
 :set tags=tags;
@@ -76,9 +70,26 @@ filetype plugin on
 :set updatetime=800
 " :au! CursorHold *.[ch] nested exe "silent! botright ptag " . expand("<cword>")
 
-" Plugins
+" Pathogen & its plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+
+" Vundle
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype on
+" Vundle end
+
 
 " Toggle Taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
