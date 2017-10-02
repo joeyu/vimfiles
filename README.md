@@ -9,4 +9,5 @@ $ git submodule update --init --recursive
 Each plugin is maintained as a `git-submodule`.
 
 1. [pathogen](https://github.com/tpope/vim-pathogen)
+1. [Vundle](https://github.com/VundleVim/Vundle.vim)
 1. [nerdtree](https://github.com/scrooloose/nerdtree)
