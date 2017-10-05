@@ -100,6 +100,12 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 " Toggle NERDTree
 nnoremap <silent> <F7> :NERDTree<CR>
 
+" YMC
+nnoremap <silent> <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 "let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}
 "let g:htmlbeautify = {'indent_size': 4, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']}
 "let g:cssbeautify = {'indent_size': 4, 'indent_char': ' '}
