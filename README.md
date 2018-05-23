@@ -5,6 +5,9 @@ $ git clone https://github.com/joeyu/vimfiles.git .vim
 $ git submodule update --init --recursive
 ~~~
 
+[YouCompleteMe](http://valloric.github.io/YouCompleteMe) needs
+additional setup, please refer to its installation guide.
+
 ## Plugins
 Each plugin is maintained as a `git-submodule`.
 
