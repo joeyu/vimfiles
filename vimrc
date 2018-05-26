@@ -26,15 +26,17 @@ set background=dark
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+                \| exe "normal g'\"" | endif
 endif
 
 " Uncomment the following to have Vim load indentation rules according to the
 " detected filetype. Per default Debian Vim only load filetype specific
 " plugins.
 if has("autocmd")
-  filetype indent on
+    autocmd BufNewFile,BufRead *.wxml set filetype=html
+    autocmd BufNewFile,BufRead *.wxss set filetype=css
+    filetype indent on
 endif
 
 " The following are commented out as they cause vim to behave a lot
@@ -53,7 +55,7 @@ set nu                  " Show line numbers
 " Source a global configuration file if available
 " XXX Deprecated, please move your changes here in /etc/vim/vimrc
 if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
+    source /etc/vim/vimrc.local
 endif
 
 " Tab settings
@@ -112,7 +114,7 @@ nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 if !exists("autocommands_loaded")
     let autocommands_loaded = 1
-    
+
 
     " map <c-f> :call JsBeautify()<cr>
     " or
