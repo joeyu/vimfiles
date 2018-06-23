@@ -51,6 +51,7 @@ set incsearch		" Incremental search
 set mouse=a		" Enable mouse usage (all modes) in terminals
 set nobackup            " No backup file after editing
 set nu                  " Show line numbers
+set encoding=utf-8
 
 " Source a global configuration file if available
 " XXX Deprecated, please move your changes here in /etc/vim/vimrc
