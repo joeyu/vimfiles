@@ -130,3 +130,7 @@ endif
 
 " Map `\s` to replace the current word
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+
+map <C-K> :py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
+
