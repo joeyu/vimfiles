@@ -20,3 +20,11 @@ if filereadable("/etc/vim/gvimrc.local")
 endif
 
 colorscheme torte
+
+set langmenu=en_US
+let $LANG = 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+set colorcolumn=80
+highlight ColorColumn guibg=Grey
