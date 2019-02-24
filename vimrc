@@ -53,8 +53,8 @@ set nobackup            " No backup file after editing
 set nu                  " Show line numbers
 set encoding=utf-8
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=Grey
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=Grey
 
 " Source a global configuration file if available
 " XXX Deprecated, please move your changes here in /etc/vim/vimrc
