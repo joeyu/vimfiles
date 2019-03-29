@@ -77,13 +77,13 @@ set smartindent
 " :au! CursorHold *.[ch] nested exe "silent! botright ptag " . expand("<cword>")
 
 " Pathogen & its plugins
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+" runtime bundle/vim-pathogen/autoload/pathogen.vim
+"execute pathogen#infect()
 
 " Vundle
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 " call vundle#begin('~/some/path/here')
@@ -91,26 +91,42 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+"Plugin 'tmhedberg/SimpylFold'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'hdima/python-syntax'
+
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype on
+filetype plugin indent on
 " Vundle end
 
 
 " Toggle Taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Toggle NERDTree
-nnoremap <silent> <F7> :NERDTree<CR>
+map <silent> <F7> :NERDTree<CR>
+
+" Python
+" Flake8 python syntax check
+autocmd FileType  python nmap <buffer> <F3> :call Flake8() <CR>
+autocmd FileType  python let python_highlight_all = 1
+
 
 " YMC
 nnoremap <silent> <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 "let g:jsbeautify = {'indent_size': 4, 'indent_char': '\t'}
 "let g:htmlbeautify = {'indent_size': 4, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u']}
